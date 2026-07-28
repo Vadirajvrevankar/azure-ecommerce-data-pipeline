@@ -4,9 +4,9 @@
 
 \## Overview
 
-End-to-end batch ETL pipeline built on Azure, processing e-commerce 
+End-to-end batch ETL pipeline built on Azure, processing e-commerce
 
-sales data through a Medallion architecture (Bronze -> Silver -> Gold), 
+sales data through a Medallion architecture (Bronze -> Silver -> Gold),
 
 serving cleaned data to Power BI dashboards.
 
@@ -14,11 +14,11 @@ serving cleaned data to Power BI dashboards.
 
 \## Problem Statement
 
-Raw e-commerce transaction data is messy - missing customer IDs, 
+Raw e-commerce transaction data is messy - missing customer IDs,
 
-returns represented as negative quantities, duplicate invoices. 
+returns represented as negative quantities, duplicate invoices.
 
-This pipeline ingests, cleans, and transforms this data into 
+This pipeline ingests, cleans, and transforms this data into
 
 analytics-ready tables for business reporting.
 
@@ -26,11 +26,11 @@ analytics-ready tables for business reporting.
 
 \## Architecture
 
-Source CSV -> Azure Data Factory -> ADLS Gen2 (Bronze) 
+Source CSV -> Azure Data Factory -> ADLS Gen2 (Bronze)
 
-\-> Databricks/PySpark (Silver - cleaned) 
+\-> Databricks/PySpark (Silver - cleaned)
 
-\-> Delta Lake (Gold - aggregated) 
+\-> Delta Lake (Gold - aggregated)
 
 \-> Azure Synapse -> Power BI
 
@@ -54,11 +54,27 @@ Source CSV -> Azure Data Factory -> ADLS Gen2 (Bronze)
 
 \## Dataset
 
-UCI Online Retail Dataset (\~500K rows) - UK-based online retailer 
+UCI Online Retail Dataset (\~500K rows) - UK-based online retailer
 
 transactions, Dec 2010 - Dec 2011.
 
 
 
 \## Status: In Progress
+
+
+### Completed
+
+- GitHub Repo setup
+- Azure account setup
+- Resource Group Created
+- ADLS Gen2 Storage Account with bronze/silver/gold containers
+- Raw dataset uploaded to bronze layer
+
+### Next
+
+- Build Azure Data Factory pipeline(Bronze-Silver)
+- Spark Data Cleaning in Databricks
+- Aggregation in Gold layer
+- Synapse + Power BI dashboard
 
