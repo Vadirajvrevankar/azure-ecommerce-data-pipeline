@@ -63,18 +63,44 @@ transactions, Dec 2010 - Dec 2011.
 \## Status: In Progress
 
 
-### Completed
 
-- GitHub Repo setup
-- Azure account setup
-- Resource Group Created
-- ADLS Gen2 Storage Account with bronze/silver/gold containers
-- Raw dataset uploaded to bronze layer
+\### Completed
 
-### Next
+\- \[x] GitHub repo setup
 
-- Build Azure Data Factory pipeline(Bronze-Silver)
-- Spark Data Cleaning in Databricks
-- Aggregation in Gold layer
-- Synapse + Power BI dashboard
+\- \[x] Azure account setup
+
+\- \[x] Resource Group created
+
+\- \[x] ADLS Gen2 Storage Account with bronze/silver/gold containers
+
+\- \[x] Raw dataset uploaded to bronze layer
+
+\- \[x] Azure Data Factory created
+
+\- \[x] Linked Service connected to ADLS Gen2
+
+\- \[x] Datasets created (Bronze source, Silver sink)
+
+\- \[x] Copy Data pipeline (Bronze -> Silver) built and tested successfully
+
+
+
+\### Next
+
+\- \[ ] PySpark data cleaning in Databricks
+
+\- \[ ] Aggregations in Gold layer
+
+\- \[ ] Synapse + Power BI dashboard
+
+
+
+\## Screenshots
+
+!\[ADF Pipeline](docs/adf\_pipeline\_canvas.png)
+
+!\[Debug Success](docs/adf\_debug\_success.png)
+
+!\[Silver Container Output](docs/silver\_container\_output.png)
 
