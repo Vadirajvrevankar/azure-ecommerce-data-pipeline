@@ -84,15 +84,29 @@ transactions, Dec 2010 - Dec 2011.
 
 \- \[x] Copy Data pipeline (Bronze -> Silver) built and tested successfully
 
+\- \[x] Azure Databricks workspace and cluster created
+
+\- \[x] PySpark data cleaning notebook (handled nulls, negative quantities/returns, duplicates)
+
+\- \[x] Cleaned data written to Silver layer as Delta table
+
 
 
 \### Next
 
-\- \[ ] PySpark data cleaning in Databricks
+\- \[ ] Lookup Activity in ADF pipeline
+
+\- \[ ] Star Schema design (fact\_sales, dim\_customer, dim\_product, dim\_date)
+
+\- \[ ] SCD Type 2 implementation on dim\_customer
 
 \- \[ ] Aggregations in Gold layer
 
-\- \[ ] Synapse + Power BI dashboard
+\- \[ ] Azure Synapse Analytics setup
+
+\- \[ ] Power BI dashboard
+
+\- \[ ] Azure Key Vault security implementation
 
 
 
@@ -103,4 +117,9 @@ transactions, Dec 2010 - Dec 2011.
 !\[Debug Success](docs/adf\_debug\_success.png)
 
 !\[Silver Container Output](docs/silver\_container\_output.png)
+!\[Databricks Null Counts](docs/databricks\_null\_counts.png)
+
+!\[Databricks Write Success](docs/databricks\_write\_success.png)
+
+!\[Silver Cleaned Output](docs/silver\_cleaned\_output.png)
 
