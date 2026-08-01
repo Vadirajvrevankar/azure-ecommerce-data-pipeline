@@ -90,11 +90,15 @@ transactions, Dec 2010 - Dec 2011.
 
 \- \[x] Cleaned data written to Silver layer as Delta table
 
+- [x] Lookup Activity added to ADF pipeline (Bronze -> Silver)
+
+- [x] Star Schema designed and documented
+
 
 
 \### Next
 
-\- \[ ] Lookup Activity in ADF pipeline
+
 
 \- \[ ] Star Schema design (fact\_sales, dim\_customer, dim\_product, dim\_date)
 
