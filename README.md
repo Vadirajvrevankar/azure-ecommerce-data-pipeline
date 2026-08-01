@@ -94,13 +94,14 @@ transactions, Dec 2010 - Dec 2011.
 
 - [x] Star Schema designed and documented
 
+- [x] Star Schema built via PySpark (fact_sales, dim_customer, 
+         dim_product, dim_date) written to Gold layer
+
 
 
 \### Next
 
 
-
-\- \[ ] Star Schema design (fact\_sales, dim\_customer, dim\_product, dim\_date)
 
 \- \[ ] SCD Type 2 implementation on dim\_customer
 
