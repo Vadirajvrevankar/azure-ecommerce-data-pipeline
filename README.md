@@ -97,13 +97,13 @@ transactions, Dec 2010 - Dec 2011.
 - [x] Star Schema built via PySpark (fact_sales, dim_customer, 
          dim_product, dim_date) written to Gold layer
 
+- [x] SCD Type 2 implementation on dim\_customer
+
+
 
 
 \### Next
 
-
-
-\- \[ ] SCD Type 2 implementation on dim\_customer
 
 \- \[ ] Aggregations in Gold layer
 
@@ -127,4 +127,17 @@ transactions, Dec 2010 - Dec 2011.
 !\[Databricks Write Success](docs/databricks\_write\_success.png)
 
 !\[Silver Cleaned Output](docs/silver\_cleaned\_output.png)
+
+!\[ADF Lookup Pipeline](docs/adf\_lookup\pipeline.png)
+
+
+![ADF Lookup Pipeline](docs/adf_lookup_pipeline.png)
+
+![ADF Lookup Debug Success](docs/adf_lookup_debug_success.png)
+
+![Gold Star Schema Output](docs/gold_start_schema_output.png)
+
+![Fact Sales Preview](docs/facts_sales_preview.png)
+
+![SCD Type 2 Customer History](docs/scd2_customer_history.png)
 
