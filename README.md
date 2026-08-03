@@ -99,13 +99,15 @@ transactions, Dec 2010 - Dec 2011.
 
 - [x] SCD Type 2 implementation on dim\_customer
 
+-[x] Aggregation in gold layer completed
+
 
 
 
 \### Next
 
 
-\- \[ ] Aggregations in Gold layer
+
 
 \- \[ ] Azure Synapse Analytics setup
 
