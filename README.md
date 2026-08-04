@@ -101,15 +101,14 @@ transactions, Dec 2010 - Dec 2011.
 
 -[x] Aggregation in gold layer completed
 
+ [x] Synapse Analytics + views created
+
 
 
 
 \### Next
 
 
-
-
-\- \[ ] Azure Synapse Analytics setup
 
 \- \[ ] Power BI dashboard
 
@@ -142,4 +141,12 @@ transactions, Dec 2010 - Dec 2011.
 ![Fact Sales Preview](docs/facts_sales_preview.png)
 
 ![SCD Type 2 Customer History](docs/scd2_customer_history.png)
+
+![monthly revenue](docs/agg_monthly_revenue.png)
+
+![top product](docs/agg_top_products.png)
+
+![synapse views](docs/synapse_views_created.png)
+
+![sample query result](docs/synapse_sample_query_result.png)
 
