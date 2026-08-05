@@ -106,14 +106,13 @@ transactions, Dec 2010 - Dec 2011.
  [x] power BI dashboard completed
 
 
-
-
-\### Next
-
+ [x] power BI dashboard completed
 
 
 
-\- \[ ] Azure Key Vault security implementation
+
+
+
 
 
 
@@ -152,4 +151,6 @@ transactions, Dec 2010 - Dec 2011.
 ![sample query result](docs/synapse_sample_query_result.png)
 
 ![power BI dashboard](docs/powerbi.png)
+
+![key vault](docs/adf_linked_service.png)
 
