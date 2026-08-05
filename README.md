@@ -103,6 +103,8 @@ transactions, Dec 2010 - Dec 2011.
 
  [x] Synapse Analytics + views created
 
+ [x] power BI dashboard completed
+
 
 
 
@@ -110,7 +112,6 @@ transactions, Dec 2010 - Dec 2011.
 
 
 
-\- \[ ] Power BI dashboard
 
 \- \[ ] Azure Key Vault security implementation
 
@@ -149,4 +150,6 @@ transactions, Dec 2010 - Dec 2011.
 ![synapse views](docs/synapse_views_created.png)
 
 ![sample query result](docs/synapse_sample_query_result.png)
+
+![power BI dashboard](docs/powerbi.png)
 
