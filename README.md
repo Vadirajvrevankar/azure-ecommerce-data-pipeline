@@ -1,156 +1,147 @@
-\# Azure E-commerce Data Pipeline
+# 🛒 Azure E-Commerce Data Pipeline
 
+> An end-to-end Azure batch ETL pipeline that transforms raw e-commerce transaction data into analytics-ready datasets using a **Medallion Architecture** and serves business insights through **Power BI**.
 
+## 📌 Overview
 
-\## Overview
+This project processes raw e-commerce sales data through **Bronze → Silver → Gold** layers.
 
-End-to-end batch ETL pipeline built on Azure, processing e-commerce
+The pipeline handles data ingestion, cleansing, transformation, dimensional modeling, SCD Type 2, aggregations, and analytical reporting.
 
-sales data through a Medallion architecture (Bronze -> Silver -> Gold),
+## 🎯 Problem Statement
 
-serving cleaned data to Power BI dashboards.
+Raw e-commerce transaction data contains:
 
+- Missing customer IDs
+- Duplicate invoices
+- Returns represented as negative quantities
+- Inconsistent and unclean transaction records
 
+The pipeline cleans and transforms this raw data into reliable, analytics-ready datasets for business reporting.
 
-\## Problem Statement
+## 🏗️ Architecture
 
-Raw e-commerce transaction data is messy - missing customer IDs,
+**CSV Dataset → Azure Data Factory → ADLS Gen2 (Bronze) → Azure Databricks / PySpark (Silver) → Delta Lake (Gold) → Azure Synapse Analytics → Power BI**
 
-returns represented as negative quantities, duplicate invoices.
+### Medallion Architecture
 
-This pipeline ingests, cleans, and transforms this data into
+**🥉 Bronze** → Raw source data stored in ADLS Gen2
 
-analytics-ready tables for business reporting.
+**🥈 Silver** → Cleaned and validated Delta data
 
+**🥇 Gold** → Star schema, historical dimensions, and business aggregations
 
+## 🛠️ Technology Stack
 
-\## Architecture
+| Technology | Purpose |
+|---|---|
+| **Azure Data Factory** | Data ingestion and pipeline orchestration |
+| **ADLS Gen2** | Cloud data storage and Medallion layers |
+| **Azure Databricks** | PySpark data processing and transformation |
+| **Delta Lake** | Reliable Silver and Gold data storage |
+| **Azure Synapse Analytics** | SQL analytics and serving layer |
+| **Power BI** | Business reporting and dashboards |
+| **Azure Key Vault** | Secrets and credential management |
 
-Source CSV -> Azure Data Factory -> ADLS Gen2 (Bronze)
+## 📊 Dataset
 
-\-> Databricks/PySpark (Silver - cleaned)
+**UCI Online Retail Dataset**
 
-\-> Delta Lake (Gold - aggregated)
+- Approximately **500K transactions**
+- UK-based online retailer
+- Period: **December 2010 – December 2011**
+- Transaction-level e-commerce sales data
 
-\-> Azure Synapse -> Power BI
+## ✅ Completed
 
-
-
-\## Tech Stack
-
-\- Azure Data Factory
-
-\- Azure Data Lake Storage Gen2
-
-\- Azure Databricks (PySpark, Delta Lake)
-
-\- Azure Synapse Analytics
-
-\- Power BI
-
-\- Azure Key Vault (secrets management)
-
-
-
-\## Dataset
-
-UCI Online Retail Dataset (\~500K rows) - UK-based online retailer
-
-transactions, Dec 2010 - Dec 2011.
-
-
-
-\## Status: In Progress
-
-
-
-\### Completed
-
-\- \[x] GitHub repo setup
-
-\- \[x] Azure account setup
-
-\- \[x] Resource Group created
-
-\- \[x] ADLS Gen2 Storage Account with bronze/silver/gold containers
-
-\- \[x] Raw dataset uploaded to bronze layer
-
-\- \[x] Azure Data Factory created
-
-\- \[x] Linked Service connected to ADLS Gen2
-
-\- \[x] Datasets created (Bronze source, Silver sink)
-
-\- \[x] Copy Data pipeline (Bronze -> Silver) built and tested successfully
-
-\- \[x] Azure Databricks workspace and cluster created
-
-\- \[x] PySpark data cleaning notebook (handled nulls, negative quantities/returns, duplicates)
-
-\- \[x] Cleaned data written to Silver layer as Delta table
-
-- [x] Lookup Activity added to ADF pipeline (Bronze -> Silver)
-
+- [x] GitHub repository setup
+- [x] Azure account and Resource Group setup
+- [x] ADLS Gen2 Storage Account created
+- [x] Bronze, Silver, and Gold layers configured
+- [x] Raw dataset uploaded to Bronze
+- [x] Azure Data Factory created
+- [x] ADLS Gen2 Linked Service configured
+- [x] Bronze and Silver datasets created
+- [x] Bronze → Silver Copy Data pipeline built and tested
+- [x] Azure Databricks workspace and cluster created
+- [x] PySpark data cleaning implemented
+- [x] Null values, negative quantities/returns, and duplicates handled
+- [x] Cleaned data written to Silver as Delta
+- [x] ADF Lookup Activity added
 - [x] Star Schema designed and documented
+- [x] Gold layer built using PySpark
+- [x] `fact_sales` created
+- [x] `dim_customer` created
+- [x] `dim_product` created
+- [x] `dim_date` created
+- [x] SCD Type 2 implemented for `dim_customer`
+- [x] Gold-layer business aggregations completed
+- [x] Azure Synapse Analytics configured
+- [x] Synapse analytical views created
+- [x] Sample SQL queries validated
+- [x] Power BI dashboard completed
+- [x] Azure Key Vault integrated for secret management
 
-- [x] Star Schema built via PySpark (fact_sales, dim_customer, 
-         dim_product, dim_date) written to Gold layer
+## ⭐ Key Data Engineering Concepts
 
-- [x] SCD Type 2 implementation on dim\_customer
+**ETL / ELT** • **Medallion Architecture** • **ADLS Gen2** • **PySpark** • **Delta Lake** • **Star Schema** • **Fact & Dimension Tables** • **SCD Type 2** • **Data Cleansing** • **Data Quality** • **Data Aggregation** • **SQL Analytics** • **Pipeline Orchestration** • **Secrets Management** • **Business Intelligence**
 
--[x] Aggregation in gold layer completed
+## 📁 Project Structure
 
- [x] Synapse Analytics + views created
+**`docs/`** — Pipeline, Databricks, Synapse, Key Vault, and Power BI screenshots
 
- [x] power BI dashboard completed
+**`notebooks/`** — PySpark transformation and data engineering notebooks
 
+**`pipelines/`** — Azure Data Factory pipeline definitions/documentation
 
- [x] power BI dashboard completed
+**`README.md`** — Project documentation
 
+## 📸 Screenshots
 
+### Azure Data Factory
+![ADF Pipeline](docs/adf_pipeline_canvas.png)
 
-
-
-
-
-
-
-\## Screenshots
-
-!\[ADF Pipeline](docs/adf\_pipeline\_canvas.png)
-
-!\[Debug Success](docs/adf\_debug\_success.png)
-
-!\[Silver Container Output](docs/silver\_container\_output.png)
-!\[Databricks Null Counts](docs/databricks\_null\_counts.png)
-
-!\[Databricks Write Success](docs/databricks\_write\_success.png)
-
-!\[Silver Cleaned Output](docs/silver\_cleaned\_output.png)
-
-!\[ADF Lookup Pipeline](docs/adf\_lookup\pipeline.png)
-
+![ADF Debug Success](docs/adf_debug_success.png)
 
 ![ADF Lookup Pipeline](docs/adf_lookup_pipeline.png)
 
 ![ADF Lookup Debug Success](docs/adf_lookup_debug_success.png)
 
+### Azure Databricks & Silver Layer
+![Databricks Null Counts](docs/databricks_null_counts.png)
+
+![Databricks Write Success](docs/databricks_write_success.png)
+
+![Silver Cleaned Output](docs/silver_cleaned_output.png)
+
+![Silver Container Output](docs/silver_container_output.png)
+
+### Gold Layer & Data Modeling
 ![Gold Star Schema Output](docs/gold_start_schema_output.png)
 
 ![Fact Sales Preview](docs/facts_sales_preview.png)
 
 ![SCD Type 2 Customer History](docs/scd2_customer_history.png)
 
-![monthly revenue](docs/agg_monthly_revenue.png)
+![Monthly Revenue](docs/agg_monthly_revenue.png)
 
-![top product](docs/agg_top_products.png)
+![Top Products](docs/agg_top_products.png)
 
-![synapse views](docs/synapse_views_created.png)
+### Azure Synapse Analytics
+![Synapse Views](docs/synapse_views_created.png)
 
-![sample query result](docs/synapse_sample_query_result.png)
+![Synapse Sample Query Result](docs/synapse_sample_query_result.png)
 
-![power BI dashboard](docs/powerbi.png)
+### Power BI
+![Power BI Dashboard](docs/powerbi.png)
 
-![key vault](docs/adf_linked_service.png)
+### Security
+![Azure Key Vault](docs/adf_linked_service.png)
 
+## 🎯 Learning Outcome
+
+This project demonstrates practical experience in building an **end-to-end Azure data engineering pipeline**, from raw data ingestion and cleansing to dimensional modeling, historical data management, analytical serving, security, and business intelligence.
+
+## 🚀 Project Status
+
+**Completed ✅**
